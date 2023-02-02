@@ -15,6 +15,7 @@ class ContactForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+  
     this.props.onSubmit(this.state);
     this.setState({ name: '', number: '' });
   };
@@ -29,7 +30,7 @@ class ContactForm extends Component {
             <input
               type="text"
               name="name"
-              value={this.state.name}
+              value={name}
               onChange={this.handleChangeValue}
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
@@ -42,7 +43,7 @@ class ContactForm extends Component {
               type="tel"
               name="number"
               onChange={this.handleChangeValue}
-              value={this.state.number}
+              value={number}
               required
             />
           </label>
