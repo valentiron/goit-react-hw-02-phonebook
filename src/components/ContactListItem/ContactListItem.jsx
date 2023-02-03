@@ -3,7 +3,7 @@ import css from './ContactListItem.module.css';
 
 const ContactListItem = ({contact: {id,name,number}, onDelete}) => {
     return (
-        <li key={id} className={css.item}>
+        <li className={css.item}>
             <span>{name}</span>
             <span>{number}</span>
             <button type='button' onClick={() => onDelete(id)}>Delete</button>
@@ -13,7 +13,7 @@ const ContactListItem = ({contact: {id,name,number}, onDelete}) => {
 };
 
 ContactListItem.propTypes = {
-    contacts: PropTypes.arrayOf(
+    contact: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
